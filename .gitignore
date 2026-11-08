@@ -1,0 +1,49 @@
+# Secrets: never commit
+.env
+.env.*
+!.env.example
+*.keystore
+keystore*.json
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+*.tsbuildinfo
+
+# Hardhat
+contracts/artifacts/
+contracts/cache/
+contracts/types/
+contracts/coverage/
+contracts/.gas-snapshot
+contracts/snapshots/
+# Ignition records: only the public Sepolia deployment record is committed. Local (31337) and failed or
+# wrong-chain attempts stay out of git.
+contracts/ignition/deployments/*
+!contracts/ignition/deployments/chain-11155111/
+
+# AI-assistant tooling (local only; Hardhat regenerates its skills)
+.claude/
+contracts/.claude/
+contracts/.agents/
+contracts/AGENTS.md
+contracts/CLAUDE.md
+
+# Logs and editor files
+*.log
+*.local
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+
+# Playwright
+web/test-results/
+web/playwright-report/
+web/blob-report/
+web/playwright/.cache/
+web/test-results-pinata/
+web/playwright-report-pinata/

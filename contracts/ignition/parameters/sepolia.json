@@ -1,0 +1,7 @@
+{
+  "TrustLanceEscrowModule": {
+    "admin": "0x6B849A42f245319720Bdf8Db67030e6E6695C74e",
+    "arbitrator": "0x5351c2ecB4bD0Fd074441b4cAc400f5F9FD66815",
+    "feeBps": 100
+  }
+}

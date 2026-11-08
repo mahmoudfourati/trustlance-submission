@@ -1,0 +1,39 @@
+{
+  "name": "@trustlance/contracts",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ethers": "^4.2.1",
+    "@nomicfoundation/hardhat-ignition": "^3.1.9",
+    "@nomicfoundation/hardhat-toolbox-mocha-ethers": "^4.0.0",
+    "@types/chai": "^5.2.3",
+    "@types/chai-as-promised": "^8.0.2",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.20.5",
+    "chai": "^6.3.0",
+    "ethers": "^6.17.0",
+    "forge-std": "github:foundry-rs/forge-std#v1.16.2",
+    "hardhat": "^3.21.0",
+    "mocha": "^12.0.3",
+    "typescript": "~6.0.3"
+  },
+  "scripts": {
+    "build": "hardhat build",
+    "test": "hardhat test",
+    "test:coverage": "hardhat test --coverage",
+    "test:deep": "hardhat test solidity --test-profile deep",
+    "typecheck": "hardhat build && tsc --noEmit",
+    "node": "hardhat node",
+    "deploy:local": "hardhat ignition deploy ignition/modules/TrustLanceEscrow.ts --network localhost --parameters ignition/parameters/local.json --reset && node scripts/export-web.ts",
+    "export:web": "node scripts/export-web.ts",
+    "deploy:sepolia": "hardhat ignition deploy ignition/modules/TrustLanceEscrow.ts --network sepolia --parameters ignition/parameters/sepolia.json --verify && node scripts/export-web.ts",
+    "verify:sepolia": "hardhat ignition verify chain-11155111",
+    "diagnose:sepolia": "hardhat run scripts/diagnose-sepolia.ts --network sepolia",
+    "check:sepolia": "node scripts/check-deployment.ts 11155111",
+    "check:local": "node scripts/check-deployment.ts 31337"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.6.1"
+  }
+}

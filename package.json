@@ -1,0 +1,28 @@
+{
+  "name": "trustlance",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "contracts",
+    "web"
+  ],
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "compile": "npm run build -w @trustlance/contracts",
+    "test": "npm run test -w @trustlance/contracts && npm run test -w @trustlance/web",
+    "test:coverage": "npm run test:coverage -w @trustlance/contracts",
+    "typecheck": "npm run typecheck -w @trustlance/contracts && npm run typecheck -w @trustlance/web",
+    "lint": "npm run lint -w @trustlance/web",
+    "dev": "npm run dev -w @trustlance/web",
+    "build": "npm run build -w @trustlance/web",
+    "check": "npm run compile && npm run typecheck && npm run lint && npm test && npm run build",
+    "chain": "npm run node -w @trustlance/contracts",
+    "deploy:local": "npm run deploy:local -w @trustlance/contracts",
+    "test:e2e": "npm run compile && npm run test:e2e -w @trustlance/web",
+    "test:e2e:pinata": "npm run compile && npm run test:e2e:pinata -w @trustlance/web",
+    "deploy:sepolia": "npm run compile && npm run deploy:sepolia -w @trustlance/contracts",
+    "check:sepolia": "npm run check:sepolia -w @trustlance/contracts"
+  }
+}

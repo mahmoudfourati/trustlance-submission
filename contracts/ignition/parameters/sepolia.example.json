@@ -1,0 +1,7 @@
+{
+  "TrustLanceEscrowModule": {
+    "admin": "0xYourAdminAddress",
+    "arbitrator": "0xYourArbitratorAddress",
+    "feeBps": 100
+  }
+}
